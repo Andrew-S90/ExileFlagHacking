@@ -3443,6 +3443,7 @@ class CfgExileCustomCode
 
 		ExileClient_util_fusRoDah = "myaddon\myfunction.sqf";
 	*/
+	ExileClient_action_execute = "customcode\client\ExileClient_action_execute.sqf";
 };
 class CfgExileEnvironment
 {

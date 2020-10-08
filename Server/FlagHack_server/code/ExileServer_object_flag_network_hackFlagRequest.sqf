@@ -54,7 +54,7 @@ try
 	}
 	forEach _storedVehicles;
 	
-	_vehicleInfo = format["confirmVehicleOwnership:%1:%2", _storedVehicleRandom select 1, _territoryID] call ExileServer_system_database_query_selectSingle;
+	_vehicleInfo = format["randomVehicle:%1", _territoryID] call ExileServer_system_database_query_selectSingle;
 	
 	if (_index isEqualTo -1) then 
 	{
@@ -64,7 +64,6 @@ try
 	_storedVehicles deleteAt _index;
 	_object setVariable ["ExileTerritoryStoredVehicles", _storedVehicles, true];
 	_object setVariable ["ExileLastAttackAt", time];
-	format["raidTerritory:%1", _object getVariable ["ExileDatabaseID", 0]] call ExileServer_system_database_query_fireAndForget;
 
 	format["retrieveVehicle:%1", _vehicleInfo select 0] call ExileServer_system_database_query_fireAndForget;
 	_vehicleObject = (_vehicleInfo select 0) call ExileServer_object_vehicle_database_load;

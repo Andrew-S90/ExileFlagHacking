@@ -18,11 +18,9 @@ try
 	_lappyToppy attachTo [_playerObject, [0.1,0.55,0]];
 	_lappyToppy setDir -90;
 	_lappyToppy animate ['LaptopLidRotation', 1];
-	_lappyToppy call ExileServer_system_PushToHC_add;
 	_flag setVariable ["ExileHackerLaptop", _lappyToppy];
 	_flag setVariable ["ExileHackerUID", getPlayerUID _playerObject, true];
 	_flag setVariable ["ExileLastAttackAt", time];
-	format["raidTerritory:%1", _flag getVariable ["ExileDatabaseID", 0]] call ExileServer_system_database_query_fireAndForget;
 
 	if (getNumber(missionConfigFile >> "CfgFlagHacking" >> "showMapIcon") isEqualTo 1) then 
 	{
@@ -34,8 +32,8 @@ try
 	_serverTime = time;
 	if(_serverTime > ((_flag getVariable ["ExileXM8MobileNotifiedTime",-1800]) + 1800))then
 	{
-			_flag call ExileServer_system_xm8_sendBaseRaid;
-			_flag setVariable ["ExileXM8MobileNotifiedTime", _serverTime];
+		_flag call ExileServer_system_xm8_sendBaseRaid;
+		_flag setVariable ["ExileXM8MobileNotifiedTime", _serverTime];
 	};
 	if (getNumber(missionConfigFile >> "CfgFlagHacking" >> "notifyServer") isEqualTo 1) then
 	{
