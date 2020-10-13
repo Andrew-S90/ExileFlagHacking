@@ -3,7 +3,7 @@ Hack Flags and steal their vehicles
 
 Exile_Item_Laptop Required for hacking
 
-Showcase video: https://www.youtube.com/watch?v=HEb1Ri6DViE
+Showcase video: https://www.youtube.com/watch?v=F-H9w7jhYLg
 
 This was developed on a test server with EXTDB2, no infistar and no battleye.
 
